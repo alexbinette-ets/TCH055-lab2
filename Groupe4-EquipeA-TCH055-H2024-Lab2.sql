@@ -65,20 +65,20 @@ ORDER BY num_chambre;
 --Bloc 2 (10 pts)
 --Requ�te 2.1 (3 points) :
 --Lister tous les quarts travaill�s par Lyse Blanchard. Pour cette requ�te, afficher le matricule, le nom, le pr�nom, la date du quart et le type du quart. Trier par date du quart.
-
-
-
-
+SELECT P.MATRICULE, P.PRENOM, P.NOM, Q.DATE_QUART, Q.LABEL_QUART  
+FROM PREPOSE P
+INNER JOIN QUART_TRAVAIL_PREPOSE Q ON P.MATRICULE = Q.MATRICULE
+WHERE P.NOM = 'Blanchard' and P.PRENOM = 'Lyse' 
+ORDER BY Q.DATE_QUART ASC ;
 
 
 --Requ�te 2.2 (3 points)  :
 --Lister toutes les chambres incluant les informations de l�ain� qui l�occupe s�il y a lieux. 
 --Pour cette requ�te, afficher le num�ro de la chambre, le num�ro du service, le nom, le pr�nom et l�autonomie de l�ain�. Trier par num�ro de chambre. 
-
-
-
-
-
+SELECT C.NUM_CHAMBRE, C.NUM_SERVICE,  A.PRENOM, A.NOM, A.AUTONOMIE 
+FROM AINE A
+RIGHT JOIN CHAMBRE C ON A.ID_AINE = C.ID_AINE
+ORDER BY C.NUM_CHAMBRE ASC;
 
 
 --Requ�te 2.3 (2 points)  :
@@ -251,11 +251,11 @@ order by autonomie desc;
 --Requ�te 5.3 (4 points) :
 --Déterminer le nombre d’ainés par service. 
 --Pour cette requête, afficher le numéro de service et le nombre d’ainés correspondant. Trier par numéro de service.
-
-
-
-
-
+SELECT S.NUM_SERVICE, COUNT(C.ID_AINE) AS NB_AINES
+FROM SERVICE S 
+LEFT JOIN CHAMBRE C ON S.NUM_SERVICE = C.NUM_SERVICE
+GROUP BY S.NUM_SERVICE
+ORDER BY S.NUM_SERVICE
 
 
 --Requ�te 5.4 (6 points) :
@@ -272,21 +272,24 @@ ORDER BY COUNT(Q.matricule) DESC;
 --Requ�te 5.5 (5 points) :
 --Lister les préposés internes. Pour cette requête, afficher le matricule, le nom, le prénom, le téléphone, le taux horaire, 
 --le numéro de service auquel il appartient, et aussi le cas échéant, le numéro et la catégorie du service qu’il dirige. Trier par matricule.
-
-
-
-
+SELECT P.MATRICULE, P.PRENOM, P.NOM, P.TELEPHONE, PI.TAUX_HORAIRE, PI.NUM_SERVICE AS SERVICE_PREPOSE, S.NUM_SERVICE AS SERVICE_DIRIGE
+FROM PREPOSE P
+INNER JOIN PREPOSE_INTERNE PI ON P.MATRICULE = PI.MATRICULE
+LEFT JOIN SERVICE S ON PI.MATRICULE = S.MATRICULE_CHEF
+WHERE P.TYPE_PREPOSE = 'INTERNE'
+ORDER BY P.MATRICULE;
 
 
 --Requ�te 5.6 (5 points) :
 --Lister les ainés dont le préposé au matricule « PRI100 » s’est occupé le 1 mars 2024 pendant ses quarts de travail. 
 --Pour cette requête, affichez le matricule, le nom, le prénom, le type du préposé, la date et le label du quart de travail,
 --l’identifiant, le nom, le prénom et l’autonomie de l’ainé. Trier par l’identifiant de l’ainé.
-
-
-
-
-
+SELECT P.MATRICULE, P.PRENOM, P.NOM, P.TYPE_PREPOSE, QA.DATE_QUART, QA.LABEL_QUART, QA.ID_AINE, A.PRENOM, A.NOM, A.AUTONOMIE
+FROM PREPOSE P
+INNER JOIN QUART_TRAVAIL_PREPOSE_AINE QA ON P.MATRICULE = QA.MATRICULE
+INNER JOIN AINE A ON QA.ID_AINE = A.ID_AINE
+WHERE P.MATRICULE = 'PRI100' AND QA.DATE_QUART = '2024-03-01'
+ORDER BY QA.ID_AINE ASC;
 
 
 --Requ�te 5.7 (5 points) :
