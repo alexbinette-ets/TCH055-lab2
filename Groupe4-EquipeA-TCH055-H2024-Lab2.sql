@@ -92,7 +92,7 @@ ORDER BY C.NUM_CHAMBRE ASC;
 --Requ�te 2.3 (2 points)  :
 --D�terminer le nombre d�ain�s selon l�autonomie. 
 --Pour cette requ�te, afficher le label de l�autonomie et le nombre d�ain�s correspondant. 
-select autonomie, count(*) as nombre_d_aînés
+select autonomie, count(*) as nombre_d_aines
 from aine
 group by autonomie;
 
@@ -109,7 +109,7 @@ on p.matricule = pi.matricule;
 
 --Requ�te 2.5 (2 points) :
 --D�terminer le nombre d�ain�s par activit�. Pour cette requ�te, afficher l�identifiant de l�activit� et le nombre d�ain�s inscrits � cette activit�. 
-select id_activite, count(*) as nombre_d_aînés
+select id_activite, count(*) as nombre_d_aines
 from activite_aine
 group by id_activite;
 
@@ -316,7 +316,12 @@ ORDER BY QA.ID_AINE ASC;
 --Lister tous les quarts de travail pour lesquels aucun préposé n’est disponible. 
 --Pour cette requête, afficher la date et le label du quart. Trier par date et par label.
 SELECT qd.label_quart, qd.date_quart
-FROM Quart_Disponibilite qd;
+FROM Quart_Disponibilite qd
+WHERE (qd.label_quart, qd.date_quart) NOT IN
+(SELECT label_quart,date_quart FROM Quart_Disponibilite_Prepose)
+ORDER BY date_quart, label_quart;
+
+
 
 
 
