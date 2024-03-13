@@ -317,10 +317,11 @@ ORDER BY QA.ID_AINE ASC;
 --Pour cette requête, afficher la date et le label du quart. Trier par date et par label.
 SELECT qd.label_quart, qd.date_quart
 FROM Quart_Disponibilite qd
-WHERE (qd.label_quart, qd.date_quart) NOT IN
-(SELECT label_quart,date_quart FROM Quart_Disponibilite_Prepose)
-ORDER BY date_quart, label_quart;
-
+LEFT JOIN Quart_Disponibilite_Prepose qdp
+ON qd.label_quart = qdp.label_quart
+AND qd.DATE_QUART = qdp.DATE_QUART
+WHERE qdp.prepose_matricule is NULL
+ORDER BY qd.date_quart, qd.label_quart;
 
 
 
