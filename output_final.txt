@@ -1,0 +1,533 @@
+
+NOM                            PRENOM                        
+------------------------------ ------------------------------
+Bergeron                       Yvon                          
+Blanchard                      Luc                           
+Blanchard                      Mirabelle                     
+Blanchard                      Mirabelle                     
+Boisvert                       Bruce                         
+Chin                           Hang-Lon                      
+Delaurier                      Philippe                      
+Deslauriers                    Louise                        
+Dorée                          Denis                         
+Gerancon                       Albert                        
+Hebert                         Albert                        
+
+NOM                            PRENOM                        
+------------------------------ ------------------------------
+Laine                          Bernadette                    
+Lane                           Chritalle                     
+Peclet                         Louise                        
+Pillard                        Ernest                        
+Toutsaint                      Alice                         
+
+16 lignes sélectionnées. 
+
+
+NUM_SERVICE  NUM_ETAGE
+----------- ----------
+      10001          1
+      10002          2
+      10003          3
+      20001          1
+      20002          2
+      20003          3
+
+6 lignes sélectionnées. 
+
+
+NUM_CHAMBRE NUM_SERVICE
+----------- -----------
+      10204       10002
+      10301       10003
+      10304       10003
+      20103       20001
+      20201       20002
+      20305       20003
+      20306       20003
+
+7 lignes sélectionnées. 
+
+
+NUM_CHAMBRE    ID_AINE
+----------- ----------
+      10101          1
+      10102          2
+      10103          3
+      10104          4
+      10105          5
+      10106         12
+      10201         13
+      10202         14
+      10203         15
+      10204           
+      10205         16
+
+NUM_CHAMBRE    ID_AINE
+----------- ----------
+      10206         17
+      10301           
+      10302         24
+      10303         25
+      10304           
+      10305         26
+      10306         17
+      20101         29
+      20102         28
+      20103           
+      20104          6
+
+NUM_CHAMBRE    ID_AINE
+----------- ----------
+      20105          7
+      20106          8
+      20201           
+      20202          9
+      20203         10
+      20204         11
+      20205         18
+      20206         19
+      20301         20
+      20302         21
+      20303         22
+
+NUM_CHAMBRE    ID_AINE
+----------- ----------
+      20304         23
+      20305           
+      20306           
+
+36 lignes sélectionnées. 
+
+
+DATE_QUART       LABEL_ PREPOS
+---------------- ------ ------
+2024-03-01 00:00 jour   PRE200
+2024-03-01 00:00 nuit   PRE200
+2024-03-01 00:00 soir   PRE200
+2024-03-02 00:00 nuit   PRE200
+2024-03-02 00:00 soir   PRE200
+2024-03-03 00:00 nuit   PRE200
+2024-03-03 00:00 soir   PRE200
+
+7 lignes sélectionnées. 
+
+
+   ID_AINE NOM                            PRENOM                        
+---------- ------------------------------ ------------------------------
+         9 Pineault                       Denise                        
+        10 Prevost                        Aurelle                       
+        15 Peclet                         Louise                        
+
+
+MATRIC PRENOM                         NOM                            DATE_QUART       LABEL_
+------ ------------------------------ ------------------------------ ---------------- ------
+PRI100 Lyse                           Blanchard                      2024-03-01 00:00 nuit  
+PRI100 Lyse                           Blanchard                      2024-03-01 00:00 soir  
+PRI100 Lyse                           Blanchard                      2024-03-04 00:00 soir  
+PRI100 Lyse                           Blanchard                      2024-03-05 00:00 nuit  
+PRI100 Lyse                           Blanchard                      2024-03-05 00:00 soir  
+PRI100 Lyse                           Blanchard                      2024-03-06 00:00 soir  
+PRI100 Lyse                           Blanchard                      2024-03-06 00:00 nuit  
+PRI100 Lyse                           Blanchard                      2024-03-07 00:00 nuit  
+PRI100 Lyse                           Blanchard                      2024-03-07 00:00 soir  
+PRI100 Lyse                           Blanchard                      2024-03-08 00:00 nuit  
+PRI100 Lyse                           Blanchard                      2024-03-08 00:00 soir  
+
+11 lignes sélectionnées. 
+
+
+NUM_CHAMBRE NUM_SERVICE PRENOM                         NOM                            AUTONOMIE    
+----------- ----------- ------------------------------ ------------------------------ -------------
+      10101       10001 Luc                            Blanchard                      autonome     
+      10102       10001 Bruce                          Boisvert                       autonome     
+      10103       10001 Chritalle                      Lane                           autonome     
+      10104       10001 Ernest                         Pillard                        autonome     
+      10105       10001 Mirabelle                      Blanchard                      autonome     
+      10106       10001 Mirabelle                      Blanchard                      autonome     
+      10201       10002 Yvon                           Bergeron                       autonome     
+      10202       10002 Denis                          Dorée                          autonome     
+      10203       10002 Louise                         Peclet                         autonome     
+      10204       10002                                                                            
+      10205       10002 Louise                         Deslauriers                    autonome     
+
+NUM_CHAMBRE NUM_SERVICE PRENOM                         NOM                            AUTONOMIE    
+----------- ----------- ------------------------------ ------------------------------ -------------
+      10206       10002 Albert                         Hebert                         autonome     
+      10301       10003                                                                            
+      10302       10003 Albert                         Gerancon                       autonome     
+      10303       10003 Philippe                       Delaurier                      autonome     
+      10304       10003                                                                            
+      10305       10003 Alice                          Toutsaint                      autonome     
+      10306       10003 Albert                         Hebert                         autonome     
+      20101       20001 Louise                         Pattine                        semi-autonome
+      20102       20001 Hang                           Wuh                            semi-autonome
+      20103       20001                                                                            
+      20104       20001 Albertine                      Lepalier                       semi-autonome
+
+NUM_CHAMBRE NUM_SERVICE PRENOM                         NOM                            AUTONOMIE    
+----------- ----------- ------------------------------ ------------------------------ -------------
+      20105       20001 Prudence                       Lavoisier                      semi-autonome
+      20106       20001 Albert                         Prince                         semi-autonome
+      20201       20002                                                                            
+      20202       20002 Denise                         Pineault                       semi-autonome
+      20203       20002 Aurelle                        Prevost                        semi-autonome
+      20204       20002 Marielle                       Boisclair                      semi-autonome
+      20205       20002 Catherine                      Trevisiani                     semi-autonome
+      20206       20002 Catherine                      Trevisiani                     semi-autonome
+      20301       20003 Mathieu                        Jacques                        semi-autonome
+      20302       20003 Thérèse                        Fournier                       semi-autonome
+      20303       20003 Denis                          Miljours                       semi-autonome
+
+NUM_CHAMBRE NUM_SERVICE PRENOM                         NOM                            AUTONOMIE    
+----------- ----------- ------------------------------ ------------------------------ -------------
+      20304       20003 Marielle                       Boisclair                      semi-autonome
+      20305       20003                                                                            
+      20306       20003                                                                            
+
+36 lignes sélectionnées. 
+
+
+AUTONOMIE     NOMBRE_D_AINES
+------------- --------------
+autonome                  16
+semi-autonome             15
+
+
+NOM                            PRENOM                         TYPE_PREPO TAUX_HORAIRE
+------------------------------ ------------------------------ ---------- ------------
+Blanchard                      Lyse                           INTERNE           25,75
+Bellevue                       Camille                        INTERNE           25,75
+Champlain                      Mike                           INTERNE           25,75
+Chon                           White                          INTERNE           25,75
+Franck                         Henry                          INTERNE           25,75
+Boisvert                       Cathérine                      INTERNE           25,75
+Will                           Haris                          INTERNE           25,75
+Yvaroski                       Solange                        INTERNE           25,75
+Parent                         Marchand                       INTERNE           25,75
+Réné                           Élianne                        INTERNE           25,75
+Brillant                       Patricia                       INTERNE           25,75
+
+NOM                            PRENOM                         TYPE_PREPO TAUX_HORAIRE
+------------------------------ ------------------------------ ---------- ------------
+Enfant                         Mirabelle                      INTERNE           25,75
+Colombier                      Gaston                         INTERNE           25,75
+Viger                          Larisse                        INTERNE           25,75
+Christ                         Hébert                         INTERNE           25,75
+Frasier                        Francine                       INTERNE           25,75
+
+16 lignes sélectionnées. 
+
+
+ID_ACTIVITE NOMBRE_D_AINES
+----------- --------------
+         10             28
+         13              8
+
+
+NOM                            PRENOM                        
+------------------------------ ------------------------------
+Blanchard                      Mirabelle                     
+Lavoisier                      Prudence                      
+Prevost                        Aurelle                       
+Peclet                         Louise                        
+Miljours                       Denis                         
+Boisclair                      Marielle                      
+Delaurier                      Philippe                      
+Laine                          Bernadette                    
+
+8 lignes sélectionnées. 
+
+
+ID_ACTIVITE NB_PARTICIPANTS
+----------- ---------------
+         10              28
+         13               8
+
+
+NUMERO_SERVICE CATEG NUMERO_ETAGE MATRIC NOM_CHEF_SERVICE               PRENOM_CHEF_SERVICE           
+-------------- ----- ------------ ------ ------------------------------ ------------------------------
+         10001 RFI              1 PRI100 Blanchard                      Lyse                          
+         10002 RFI              2 PRI200 Bellevue                       Camille                       
+         10003 RFI              3 PRI400 Chon                           White                         
+         20001 UHT              1 PRI500 Franck                         Henry                         
+         20002 UHT              2 PRI800 Yvaroski                       Solange                       
+         20003 UHT              3 PRI700 Will                           Haris                         
+
+6 lignes sélectionnées. 
+
+
+Session modifié(e).
+
+
+NOM                            PRENOM                         AUTONOMIE    
+------------------------------ ------------------------------ -------------
+Boisclair                      Marielle                       semi-autonome
+Chin                           Hang-Lon                       autonome     
+Delaurier                      Philippe                       autonome     
+Gerancon                       Albert                         autonome     
+Laine                          Bernadette                     autonome     
+Laine                          Bernadette                     semi-autonome
+Pineault                       Denise                         semi-autonome
+Prevost                        Aurelle                        semi-autonome
+Toutsaint                      Alice                          autonome     
+Trevisiani                     Catherine                      semi-autonome
+Trevisiani                     Catherine                      semi-autonome
+
+11 lignes sélectionnées. 
+
+
+MATRIC NOM                            PRENOM                         NOMBRE_DISPONIBILITES
+------ ------------------------------ ------------------------------ ---------------------
+PRE400 Bellevue                       Henriette                                          5
+PRE200 Water                          Elisabeth                                          5
+
+
+PAIEMENT_A_EFFECTUER
+--------------------
+                2266
+
+
+MATRIC NOM                            PRENOM                         NOMBRE_AINES
+------ ------------------------------ ------------------------------ ------------
+PRI100 Blanchard                      Lyse                                      6
+PRI110 Réné                           Élianne                                   5
+PRI300 Champlain                      Mike                                      6
+PRI310 Enfant                         Mirabelle                                 5
+PRI500 Franck                         Henry                                     5
+PRI510 Viger                          Larisse                                   4
+PRI710 Frasier                        Francine                                  4
+PRI900 Parent                         Marchand                                  5
+
+8 lignes sélectionnées. 
+
+
+NOM                            PRENOM                        
+------------------------------ ------------------------------
+Blanchard                      Mirabelle                     
+Lavoisier                      Prudence                      
+Prevost                        Aurelle                       
+Peclet                         Louise                        
+Miljours                       Denis                         
+Boisclair                      Marielle                      
+Delaurier                      Philippe                      
+Laine                          Bernadette                    
+
+8 lignes sélectionnées. 
+
+
+   ID_AINE NOM                            PRENOM                         DATE_NAISSANCE      ID_AINE NOM                            PRENOM                         DATE_NAISSANCE  
+---------- ------------------------------ ------------------------------ ---------------- ---------- ------------------------------ ------------------------------ ----------------
+         5 Blanchard                      Mirabelle                      1938-03-22 00:00         12 Blanchard                      Mirabelle                      1930-05-05 00:00
+         8 Prince                         Albert                         1942-09-13 00:00         24 Gerancon                       Albert                         1938-09-09 00:00
+         8 Prince                         Albert                         1942-09-13 00:00         17 Hebert                         Albert                         1942-02-15 00:00
+        11 Boisclair                      Marielle                       1934-10-13 00:00         23 Boisclair                      Marielle                       1924-02-15 00:00
+        12 Blanchard                      Mirabelle                      1930-05-05 00:00          5 Blanchard                      Mirabelle                      1938-03-22 00:00
+        14 Dorée                          Denis                          1945-07-02 00:00         22 Miljours                       Denis                          1940-01-03 00:00
+        15 Peclet                         Louise                         1939-02-08 00:00         16 Deslauriers                    Louise                         1937-06-17 00:00
+        15 Peclet                         Louise                         1939-02-08 00:00         29 Pattine                        Louise                         1944-06-30 00:00
+        16 Deslauriers                    Louise                         1937-06-17 00:00         15 Peclet                         Louise                         1939-02-08 00:00
+        16 Deslauriers                    Louise                         1937-06-17 00:00         29 Pattine                        Louise                         1944-06-30 00:00
+        17 Hebert                         Albert                         1942-02-15 00:00          8 Prince                         Albert                         1942-09-13 00:00
+
+   ID_AINE NOM                            PRENOM                         DATE_NAISSANCE      ID_AINE NOM                            PRENOM                         DATE_NAISSANCE  
+---------- ------------------------------ ------------------------------ ---------------- ---------- ------------------------------ ------------------------------ ----------------
+        17 Hebert                         Albert                         1942-02-15 00:00         24 Gerancon                       Albert                         1938-09-09 00:00
+        18 Trevisiani                     Catherine                      1935-01-14 00:00         19 Trevisiani                     Catherine                      1944-09-26 00:00
+        19 Trevisiani                     Catherine                      1944-09-26 00:00         18 Trevisiani                     Catherine                      1935-01-14 00:00
+        22 Miljours                       Denis                          1940-01-03 00:00         14 Dorée                          Denis                          1945-07-02 00:00
+        23 Boisclair                      Marielle                       1924-02-15 00:00         11 Boisclair                      Marielle                       1934-10-13 00:00
+        24 Gerancon                       Albert                         1938-09-09 00:00          8 Prince                         Albert                         1942-09-13 00:00
+        24 Gerancon                       Albert                         1938-09-09 00:00         17 Hebert                         Albert                         1942-02-15 00:00
+        27 Laine                          Bernadette                     1932-12-01 00:00         31 Laine                          Bernadette                     1940-04-18 00:00
+        29 Pattine                        Louise                         1944-06-30 00:00         15 Peclet                         Louise                         1939-02-08 00:00
+        29 Pattine                        Louise                         1944-06-30 00:00         16 Deslauriers                    Louise                         1937-06-17 00:00
+        31 Laine                          Bernadette                     1940-04-18 00:00         27 Laine                          Bernadette                     1932-12-01 00:00
+
+22 lignes sélectionnées. 
+
+
+MATRIC NOM                            PRENOM                            FORFAIT       NULL
+------ ------------------------------ ------------------------------ ---------- ----------
+PRE100 Albert                         Paul                                   36           
+PRE200 Water                          Elisabeth                              36           
+PRE300 Parent                         Louise                                 36           
+PRE400 Bellevue                       Henriette                              36           
+PRI100 Blanchard                      Lyse                                           25,75
+PRI200 Bellevue                       Camille                                        25,75
+PRI300 Champlain                      Mike                                           25,75
+PRI400 Chon                           White                                          25,75
+PRI500 Franck                         Henry                                          25,75
+PRI600 Boisvert                       Cathérine                                      25,75
+PRI700 Will                           Haris                                          25,75
+
+MATRIC NOM                            PRENOM                            FORFAIT       NULL
+------ ------------------------------ ------------------------------ ---------- ----------
+PRI800 Yvaroski                       Solange                                        25,75
+PRI900 Parent                         Marchand                                       25,75
+PRI110 Réné                           Élianne                                        25,75
+PRI210 Brillant                       Patricia                                       25,75
+PRI310 Enfant                         Mirabelle                                      25,75
+PRI410 Colombier                      Gaston                                         25,75
+PRI510 Viger                          Larisse                                        25,75
+PRI610 Christ                         Hébert                                         25,75
+PRI710 Frasier                        Francine                                       25,75
+
+20 lignes sélectionnées. 
+
+
+AUTONOMIE    
+-------------
+autonome
+
+
+   ID_AINE NOM                            PRENOM                         AUTONOMIE    
+---------- ------------------------------ ------------------------------ -------------
+         1 Blanchard                      Luc                            autonome     
+         2 Boisvert                       Bruce                          autonome     
+         3 Lane                           Chritalle                      autonome     
+         4 Pillard                        Ernest                         autonome     
+         5 Blanchard                      Mirabelle                      autonome     
+         5 Blanchard                      Mirabelle                      autonome     
+         6 Lepalier                       Albertine                      semi-autonome
+         7 Lavoisier                      Prudence                       semi-autonome
+         7 Lavoisier                      Prudence                       semi-autonome
+         8 Prince                         Albert                         semi-autonome
+         9 Pineault                       Denise                         semi-autonome
+
+   ID_AINE NOM                            PRENOM                         AUTONOMIE    
+---------- ------------------------------ ------------------------------ -------------
+        10 Prevost                        Aurelle                        semi-autonome
+        10 Prevost                        Aurelle                        semi-autonome
+        11 Boisclair                      Marielle                       semi-autonome
+        12 Blanchard                      Mirabelle                      autonome     
+        13 Bergeron                       Yvon                           autonome     
+        14 Dorée                          Denis                          autonome     
+        15 Peclet                         Louise                         autonome     
+        15 Peclet                         Louise                         autonome     
+        16 Deslauriers                    Louise                         autonome     
+        17 Hebert                         Albert                         autonome     
+        18 Trevisiani                     Catherine                      semi-autonome
+
+   ID_AINE NOM                            PRENOM                         AUTONOMIE    
+---------- ------------------------------ ------------------------------ -------------
+        19 Trevisiani                     Catherine                      semi-autonome
+        20 Jacques                        Mathieu                        semi-autonome
+        21 Fournier                       Thérèse                        semi-autonome
+        22 Miljours                       Denis                          semi-autonome
+        22 Miljours                       Denis                          semi-autonome
+        23 Boisclair                      Marielle                       semi-autonome
+        23 Boisclair                      Marielle                       semi-autonome
+        24 Gerancon                       Albert                         autonome     
+        25 Delaurier                      Philippe                       autonome     
+        25 Delaurier                      Philippe                       autonome     
+        26 Toutsaint                      Alice                          autonome     
+
+   ID_AINE NOM                            PRENOM                         AUTONOMIE    
+---------- ------------------------------ ------------------------------ -------------
+        27 Laine                          Bernadette                     autonome     
+        27 Laine                          Bernadette                     autonome     
+        28 Wuh                            Hang                           semi-autonome
+
+36 lignes sélectionnées. 
+
+
+MATRIC NOM                            PRENOM                         TELEPHONE       TYPE_PREPO LABEL_ DATE_QUART      
+------ ------------------------------ ------------------------------ --------------- ---------- ------ ----------------
+PRE200 Water                          Elisabeth                      514-745-2233    EXTERNE    jour   2024-03-05 00:00
+PRE400 Bellevue                       Henriette                      514-487-7878    EXTERNE    jour   2024-03-05 00:00
+
+
+NUM_SERVICE   NB_AINES
+----------- ----------
+      10001          6
+      10002          5
+      10003          4
+      20001          5
+      20002          5
+      20003          4
+
+6 lignes sélectionnées. 
+
+
+MATRIC NOM                            PRENOM                         TELEPHONE       TYPE_PREPO
+------ ------------------------------ ------------------------------ --------------- ----------
+PRI510 Viger                          Larisse                        438-231-0524    INTERNE   
+PRI900 Parent                         Marchand                       514-646-0033    INTERNE   
+PRI500 Franck                         Henry                          514-900-4949    INTERNE   
+PRI100 Blanchard                      Lyse                           514-878-7520    INTERNE   
+PRI110 Réné                           Élianne                        438-220-4560    INTERNE   
+PRI710 Frasier                        Francine                       438-502-4056    INTERNE   
+PRI300 Champlain                      Mike                           438-666-0022    INTERNE   
+PRI310 Enfant                         Mirabelle                      514-745-0123    INTERNE   
+
+8 lignes sélectionnées. 
+
+
+MATRIC PRENOM                         NOM                            TELEPHONE       TAUX_HORAIRE SERVICE_PREPOSE SERVICE_DIRIGE
+------ ------------------------------ ------------------------------ --------------- ------------ --------------- --------------
+PRI100 Lyse                           Blanchard                      514-878-7520           25,75           10001          10001
+PRI110 Élianne                        Réné                           438-220-4560           25,75           20001               
+PRI200 Camille                        Bellevue                       438-515-8787           25,75           10002          10002
+PRI210 Patricia                       Brillant                       514-800-4646           25,75           20002               
+PRI300 Mike                           Champlain                      438-666-0022           25,75           10001               
+PRI310 Mirabelle                      Enfant                         514-745-0123           25,75           10003               
+PRI400 White                          Chon                           438-232-4567           25,75           10003          10003
+PRI410 Gaston                         Colombier                      514-489-5806           25,75           10001               
+PRI500 Henry                          Franck                         514-900-4949           25,75           20001          20001
+PRI510 Larisse                        Viger                          438-231-0524           25,75           20003               
+PRI600 Cathérine                      Boisvert                       514-732-5555           25,75           20001               
+
+MATRIC PRENOM                         NOM                            TELEPHONE       TAUX_HORAIRE SERVICE_PREPOSE SERVICE_DIRIGE
+------ ------------------------------ ------------------------------ --------------- ------------ --------------- --------------
+PRI610 Hébert                         Christ                         438-658-9853           25,75           10002               
+PRI700 Haris                          Will                           438-515-2279           25,75           20003          20003
+PRI710 Francine                       Frasier                        438-502-4056           25,75           20003               
+PRI800 Solange                        Yvaroski                       438-666-4123           25,75           20002          20002
+PRI900 Marchand                       Parent                         514-646-0033           25,75           10002               
+
+16 lignes sélectionnées. 
+
+
+MATRIC PRENOM                         NOM                            TYPE_PREPO DATE_QUART       LABEL_    ID_AINE PRENOM                         NOM                            AUTONOMIE    
+------ ------------------------------ ------------------------------ ---------- ---------------- ------ ---------- ------------------------------ ------------------------------ -------------
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 nuit            1 Luc                            Blanchard                      autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 soir            1 Luc                            Blanchard                      autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 nuit            2 Bruce                          Boisvert                       autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 soir            2 Bruce                          Boisvert                       autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 nuit            3 Chritalle                      Lane                           autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 soir            3 Chritalle                      Lane                           autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 nuit            4 Ernest                         Pillard                        autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 soir            4 Ernest                         Pillard                        autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 nuit            5 Mirabelle                      Blanchard                      autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 soir            5 Mirabelle                      Blanchard                      autonome     
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 nuit           12 Mirabelle                      Blanchard                      autonome     
+
+MATRIC PRENOM                         NOM                            TYPE_PREPO DATE_QUART       LABEL_    ID_AINE PRENOM                         NOM                            AUTONOMIE    
+------ ------------------------------ ------------------------------ ---------- ---------------- ------ ---------- ------------------------------ ------------------------------ -------------
+PRI100 Lyse                           Blanchard                      INTERNE    2024-03-01 00:00 soir           12 Mirabelle                      Blanchard                      autonome     
+
+12 lignes sélectionnées. 
+
+
+LABEL_ DATE_QUART      
+------ ----------------
+nuit   2024-03-04 00:00
+jour   2024-03-11 00:00
+nuit   2024-03-11 00:00
+soir   2024-03-11 00:00
+jour   2024-03-12 00:00
+nuit   2024-03-12 00:00
+soir   2024-03-12 00:00
+jour   2024-03-13 00:00
+nuit   2024-03-13 00:00
+soir   2024-03-13 00:00
+jour   2024-03-14 00:00
+
+LABEL_ DATE_QUART      
+------ ----------------
+nuit   2024-03-14 00:00
+soir   2024-03-14 00:00
+
+13 lignes sélectionnées. 
+
