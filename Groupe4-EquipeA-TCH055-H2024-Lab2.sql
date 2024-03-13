@@ -10,6 +10,10 @@
 -- Date : 22 f�vrier 2024
 -- Version 1.
 
+-- **** Comme mentionn� par le courriel envoy� mercredi le 6 mars, Alexandre fait maintenant partie de notre �quipe.
+-- **** Merci de le consid�rer dans la correction.
+
+
 -- =============================================================================
 
 
@@ -46,20 +50,24 @@ ORDER BY num_chambre;
 
 --Requ�te 1.5 (2 points) :
 --Lister les disponibilit�s du pr�pose dont le matricule est PRE200 entre le 1er mars 2024 et le 3 mars 2024 (les 2 dates incluses). Trier par date.
-
-
-
-
-
+SELECT quart_disponibilite.date_quart, quart_disponibilite.label_quart, quart_disponibilite_prepose.prepose_matricule
+FROM Quart_Disponibilite
+INNER JOIN Quart_Disponibilite_Prepose
+ON Quart_Disponibilite.label_quart = Quart_Disponibilite_Prepose.label_quart AND
+quart_disponibilite_prepose.date_quart = quart_disponibilite.date_quart
+WHERE Quart_Disponibilite_Prepose.prepose_matricule LIKE 'PRE200'
+AND Quart_Disponibilite.date_quart BETWEEN  DATE '2024-03-01' AND DATE '2024-03-03'
+ORDER BY Quart_Disponibilite.date_quart;
 
 --Requ�te 1.6 (2 points) :
 --Retrouvez-le ou les ain�s (id, nom de famille et pr�nom) dont le nom de famille est compos� d�au moins 6 lettres, 
 --commen�ant par la lettre � p � et se terminant par la lettre � t �. 
 --Note : La requ�te doit retrouver les noms de famille qu�ils soient en minuscules et les majuscules. Trier par identifiant.
-
-
-
-
+SELECT id_aine, nom, prenom
+FROM Aine
+WHERE LENGTH(nom) >= 6
+AND LOWER(nom) LIKE 'p%t'
+ORDER BY id_aine;
 
 
 --Bloc 2 (10 pts)
@@ -130,10 +138,19 @@ GROUP BY id_activite;
 --Requ�te 3.3 (3 points)  :
 --Lister les services en incluant le chef de service. Pour cette requ�te afficher le num�ro du service, 
 --la cat�gorie, le num�ro d��tage, le matricule du chef de service, son nom et son pr�nom. 
---Trier par num�ro de service et renommer les colonnes nom et pr�nom du chef service par Nom_Chef_Service et Prenom_Chef_Service, respectivement. 
-
-
-
+--Trier par num�ro de service et renommer les colonnes nom et pr�nom du chef service par Nom_Chef_Service et Prenom_Chef_Service, respectivement.
+SELECT 
+    s.num_service AS Numero_Service,
+    s.categorie AS Categorie,
+    s.num_etage AS Numero_Etage,
+    s.matricule_chef AS Matricule_Chef_Service,
+    p.nom AS Nom_Chef_Service,
+    p.prenom AS Prenom_Chef_Service
+FROM 
+    Service s
+INNER JOIN Prepose p
+ON s.matricule_chef = p.matricule
+ORDER BY  s.num_service; 
 
 
 --Bloc 4
@@ -185,10 +202,13 @@ ORDER BY QTPA.matricule;
 --Requ�te 4.5 (5 points) :
 --Trouver les ainés qui feront l’activité du 7 Mars 2024.
 --Pour cette requête, afficher le nom et le prénom de l’ainé, la date de l’activité et la durée. Trier par nom de l’ainé.
-
-
-
-
+SELECT AN.nom, AN.prenom
+FROM aine AN
+INNER JOIN activite_aine AA
+ON AN.id_aine = AA.id_aine
+INNER JOIN activite A
+ON AA.id_activite = A.id_activite
+WHERE A.date_activite = date '2024-03-07';
 
 
 --Requ�te 4.6 (5 points) :
@@ -230,22 +250,22 @@ order by autonomie desc;
 --Requ�te 5.1 (4 points) :
 --Affichez la liste des ainés qui participeront à au moins une activité. 
 --Pour cette requête, afficher l’identifiant (id_aine), le nom, le prénom et l’autonomie de l’ainé. Trier par identifiant.
-
-
-
-
-
-
+SELECT ai.id_aine, ai.nom, ai.prenom, ai.autonomie
+FROM Aine ai
+INNER JOIN Activite_Aine ac 
+ON ai.id_aine = ac.id_aine
+ORDER BY ai.id_aine;
 
 
 --Requ�te 5.2 (4 points) :
 --Lister les proposés disponible le 5 mars 2024 pour le quart du jour. 
 --Pour cette requête, afficher le matricule, le nom et le prénom, le téléphone et le type du proposé ainsi que la date de disponibilité.
-
-
-
-
-
+SELECT p.matricule, p.nom, p.prenom, p.telephone, p.type_prepose, q.label_quart, q.date_quart
+FROM Prepose P
+INNER JOIN Quart_Disponibilite_Prepose q
+ON q.prepose_matricule = p.matricule
+WHERE q.date_quart = DATE '2024-03-05'
+AND q.label_quart = 'jour';
 
 
 --Requ�te 5.3 (4 points) :
@@ -255,7 +275,7 @@ SELECT S.NUM_SERVICE, COUNT(C.ID_AINE) AS NB_AINES
 FROM SERVICE S 
 LEFT JOIN CHAMBRE C ON S.NUM_SERVICE = C.NUM_SERVICE
 GROUP BY S.NUM_SERVICE
-ORDER BY S.NUM_SERVICE
+ORDER BY S.NUM_SERVICE;
 
 
 --Requ�te 5.4 (6 points) :
@@ -295,7 +315,8 @@ ORDER BY QA.ID_AINE ASC;
 --Requ�te 5.7 (5 points) :
 --Lister tous les quarts de travail pour lesquels aucun préposé n’est disponible. 
 --Pour cette requête, afficher la date et le label du quart. Trier par date et par label.
-
+SELECT qd.label_quart, qd.date_quart
+FROM Quart_Disponibilite qd;
 
 
 
