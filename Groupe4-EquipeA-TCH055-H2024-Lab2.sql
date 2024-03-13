@@ -50,14 +50,13 @@ ORDER BY num_chambre;
 
 --Requ�te 1.5 (2 points) :
 --Lister les disponibilit�s du pr�pose dont le matricule est PRE200 entre le 1er mars 2024 et le 3 mars 2024 (les 2 dates incluses). Trier par date.
-SELECT quart_disponibilite.date_quart, quart_disponibilite.label_quart, quart_disponibilite_prepose.prepose_matricule
-FROM Quart_Disponibilite
-INNER JOIN Quart_Disponibilite_Prepose
-ON Quart_Disponibilite.label_quart = Quart_Disponibilite_Prepose.label_quart AND
-quart_disponibilite_prepose.date_quart = quart_disponibilite.date_quart
-WHERE Quart_Disponibilite_Prepose.prepose_matricule LIKE 'PRE200'
-AND Quart_Disponibilite.date_quart BETWEEN  DATE '2024-03-01' AND DATE '2024-03-03'
-ORDER BY Quart_Disponibilite.date_quart;
+SELECT QD.date_quart, QD.label_quart, QDP.prepose_matricule
+FROM Quart_Disponibilite QD
+INNER JOIN Quart_Disponibilite_Prepose QDP
+ON QD.label_quart = QDP.label_quart AND QDP.date_quart = QD.date_quart
+WHERE QDP.prepose_matricule LIKE 'PRE200'
+AND QD.date_quart BETWEEN DATE '2024-03-01' AND DATE '2024-03-03'
+ORDER BY QD.date_quart;
 
 --Requ�te 1.6 (2 points) :
 --Retrouvez-le ou les ain�s (id, nom de famille et pr�nom) dont le nom de famille est compos� d�au moins 6 lettres, 
@@ -104,7 +103,8 @@ group by autonomie;
 select nom, prenom,type_prepose, taux_horaire
 from prepose P
 join prepose_interne PI
-on p.matricule = pi.matricule;
+on p.matricule = pi.matricule
+order by P.nom;
 
 
 --Requ�te 2.5 (2 points) :
@@ -123,7 +123,8 @@ INNER JOIN activite_aine AA
 ON AN.id_aine = AA.id_aine
 INNER JOIN activite A
 ON AA.id_activite = A.id_activite
-WHERE A.date_activite = date '2024-03-07';
+WHERE A.date_activite = date '2024-03-07'
+ORDER BY AN.nom;
 
 
 --Requ�te 3.2 (4 points) :
@@ -140,10 +141,10 @@ GROUP BY id_activite;
 --la cat�gorie, le num�ro d��tage, le matricule du chef de service, son nom et son pr�nom. 
 --Trier par num�ro de service et renommer les colonnes nom et pr�nom du chef service par Nom_Chef_Service et Prenom_Chef_Service, respectivement.
 SELECT 
-    s.num_service AS Numero_Service,
-    s.categorie AS Categorie,
-    s.num_etage AS Numero_Etage,
-    s.matricule_chef AS Matricule_Chef_Service,
+    s.num_service,
+    s.categorie,
+    s.num_etage,
+    s.matricule_chef,
     p.nom AS Nom_Chef_Service,
     p.prenom AS Prenom_Chef_Service
 FROM 
@@ -208,7 +209,8 @@ INNER JOIN activite_aine AA
 ON AN.id_aine = AA.id_aine
 INNER JOIN activite A
 ON AA.id_activite = A.id_activite
-WHERE A.date_activite = date '2024-03-07';
+WHERE A.date_activite = date '2024-03-07'
+ORDER BY AN.nom;
 
 
 --Requ�te 4.6 (5 points) :
